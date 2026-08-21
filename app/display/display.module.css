@@ -1,0 +1,181 @@
+.screen {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 5vmin;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5vmin;
+}
+
+.shopName {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  font-size: 4.2vmin;
+  letter-spacing: 0.35em;
+  color: var(--color-ink);
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-family: var(--font-body), serif;
+  font-size: 1.8vmin;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 1vmin;
+}
+
+.headerRule {
+  height: 2px;
+  background: var(--color-gold-line);
+  margin-top: 2vmin;
+  width: 100%;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 0;
+}
+
+.columns {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.column + .column {
+  margin-left: 6vmin;
+}
+
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2.1vmin 0;
+  border-bottom: 1px solid rgba(209, 165, 55, 0.25);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.nameBlock {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1.2vmin;
+}
+
+.name {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: 4.2vmin;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.description {
+  font-family: var(--font-body), serif;
+  font-style: italic;
+  font-size: 2.1vmin;
+  color: var(--color-ink-soft);
+  margin-top: 0.5vmin;
+}
+
+.leader {
+  flex: 1;
+  border-bottom: 2px dotted var(--color-gold-line);
+  margin: 0 1vmin 0.9vmin;
+}
+
+.price {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  font-size: 4.2vmin;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+.startingAt {
+  font-family: var(--font-body), serif;
+  font-size: 1.6vmin;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-ink-soft);
+  margin-right: 0.8vmin;
+}
+
+.secondaryPanel {
+  width: 36vmin;
+  margin-left: 6vmin;
+  padding-left: 6vmin;
+  border-left: 2px solid var(--color-gold-line);
+  display: flex;
+  flex-direction: column;
+}
+
+.panelHeading {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: 2.6vmin;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin-bottom: 2.4vmin;
+}
+
+.panelBlock {
+  margin-bottom: 4.5vmin;
+}
+
+.panelLabel {
+  font-family: var(--font-body), serif;
+  font-size: 1.8vmin;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.2vmin;
+}
+
+.panelText {
+  font-family: var(--font-body), serif;
+  font-size: 2.2vmin;
+  color: var(--color-ink-soft);
+}
+
+.qrBox {
+  width: 18vmin;
+  height: 18vmin;
+  border: 2px solid var(--color-gold-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-body), serif;
+  font-size: 1.5vmin;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  padding: 1vmin;
+}

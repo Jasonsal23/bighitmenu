@@ -1,0 +1,26 @@
+:root {
+  --color-bg: #131110;
+  --color-ink: #f1e6cf;
+  --color-ink-soft: #a99b7c;
+  --color-gold: #d1a537;
+  --color-gold-line: #8a6c2b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
