@@ -5,6 +5,9 @@ import type { Service } from "@/lib/services";
 import styles from "./display.module.css";
 
 const POLL_INTERVAL_MS = 60_000;
+// Full page reload once an hour so the old WebView starts fresh and memory
+// doesn't build up over a 12-hour day.
+const RELOAD_INTERVAL_MS = 60 * 60_000;
 
 // Placeholder promo content for screen 2's secondary panel. Replace with the
 // shop's real Instagram handle and booking link/QR target when known.
@@ -66,6 +69,24 @@ export default function DisplayClient({
     };
 
     const id = setInterval(poll, POLL_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [screen]);
+
+  useEffect(() => {
+    const reloadIfOnline = async () => {
+      try {
+        // Only reload if the server answers. Reloading while offline would
+        // replace the board with the browser's error page.
+        const res = await fetch(`/api/services?screen=${screen}`, {
+          cache: "no-store",
+        });
+        if (res.ok) window.location.reload();
+      } catch {
+        // Offline: keep the current page up and try again next hour.
+      }
+    };
+
+    const id = setInterval(reloadIfOnline, RELOAD_INTERVAL_MS);
     return () => clearInterval(id);
   }, [screen]);
 
